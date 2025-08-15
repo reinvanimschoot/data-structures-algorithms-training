@@ -1,8 +1,9 @@
 {
   "devDependencies": {
+    "lodash.camelcase": "^4.3.0",
     "vitest": "^3.2.4"
   },
   "scripts": {
-    "test": "vitest"
+    "test": "node scripts/run-test.js"
   }
 }
