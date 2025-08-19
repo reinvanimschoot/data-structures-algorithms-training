@@ -1,6 +1,6 @@
 import { expect, test } from "vitest";
 
-import { getNodeValue } from "./getNodeValue";
+import { getListNodeValue } from "./getListNodeValue";
 
 class Node {
   constructor(val) {
@@ -19,7 +19,7 @@ test("test_00", () => {
   b.next = c;
   c.next = d;
 
-  expect(getNodeValue(a, 2)).toEqual("c");
+  expect(getListNodeValue(a, 2)).toEqual("c");
 });
 
 test("test_01", () => {
@@ -32,7 +32,7 @@ test("test_01", () => {
   b.next = c;
   c.next = d;
 
-  expect(getNodeValue(a, 3)).toEqual("d");
+  expect(getListNodeValue(a, 3)).toEqual("d");
 });
 
 test("test_02", () => {
@@ -45,7 +45,7 @@ test("test_02", () => {
   b.next = c;
   c.next = d;
 
-  expect(getNodeValue(a, 7)).toEqual(null);
+  expect(getListNodeValue(a, 7)).toEqual(null);
 });
 
 test("test_03", () => {
@@ -54,7 +54,7 @@ test("test_03", () => {
 
   node1.next = node2;
 
-  expect(getNodeValue(node1, 0)).toEqual("banana");
+  expect(getListNodeValue(node1, 0)).toEqual("banana");
 });
 
 test("test_04", () => {
@@ -63,5 +63,5 @@ test("test_04", () => {
 
   node1.next = node2;
 
-  expect(getNodeValue(node1, 1)).toEqual("mango");
+  expect(getListNodeValue(node1, 1)).toEqual("mango");
 });

@@ -5,7 +5,7 @@
 //   }
 // }
 
-export const getNodeValue = (head, index) => {
+export const getListNodeValue = (head, index) => {
   let currentNode = head;
   let currentIndex = 0;
 
