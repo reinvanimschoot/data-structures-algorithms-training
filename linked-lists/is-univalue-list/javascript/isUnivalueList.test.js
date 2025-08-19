@@ -67,7 +67,7 @@ test("test_04", () => {
   expect(isUnivalueList(z)).toBeTruthy();
 });
 
-test("test_03", () => {
+test("test_05", () => {
   const u = new Node(2);
   const v = new Node(1);
   const w = new Node(2);
