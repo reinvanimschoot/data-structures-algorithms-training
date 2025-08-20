@@ -1,6 +1,6 @@
 import { expect, test } from "vitest";
 
-import { getListNodeValue } from "./getListNodeValue";
+import { findValue } from "./findValue";
 
 class Node {
   constructor(val) {
@@ -19,7 +19,7 @@ test("test_00", () => {
   b.next = c;
   c.next = d;
 
-  expect(getListNodeValue(a, 2)).toEqual("c");
+  expect(findValue(a, "c")).toEqual(true);
 });
 
 test("test_01", () => {
@@ -32,7 +32,7 @@ test("test_01", () => {
   b.next = c;
   c.next = d;
 
-  expect(getListNodeValue(a, 3)).toEqual("d");
+  expect(findValue(a, "d")).toEqual(true);
 });
 
 test("test_02", () => {
@@ -45,23 +45,26 @@ test("test_02", () => {
   b.next = c;
   c.next = d;
 
-  expect(getListNodeValue(a, 7)).toEqual(null);
+  expect(findValue(a, "q")).toEqual(false);
 });
 
 test("test_03", () => {
-  const node1 = new Node("banana");
-  const node2 = new Node("mango");
+  const node1 = new Node("jason");
+  const node2 = new Node("leneli");
 
   node1.next = node2;
 
-  expect(getListNodeValue(node1, 0)).toEqual("banana");
+  expect(findValue(node1, "jason")).toEqual(true);
 });
 
 test("test_04", () => {
-  const node1 = new Node("banana");
-  const node2 = new Node("mango");
+  const node1 = new Node(42);
 
-  node1.next = node2;
+  expect(findValue(node1, 42)).toEqual(true);
+});
 
-  expect(getListNodeValue(node1, 1)).toEqual("mango");
+test("test_05", () => {
+  const node1 = new Node(42);
+
+  expect(findValue(node1, 100)).toEqual(false);
 });

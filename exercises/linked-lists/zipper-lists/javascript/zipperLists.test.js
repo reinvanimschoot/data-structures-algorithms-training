@@ -1,7 +1,7 @@
 import { expect, test } from "vitest";
 
 import { zipperLists } from "./zipperLists";
-import { linkedListValues } from "../../linked-list-values/javascript/linkedListValues";
+import { listValues } from "../../list-values/javascript/listValues";
 
 class Node {
   constructor(val) {
@@ -23,14 +23,7 @@ test("test_00", () => {
   x.next = y;
   y.next = z;
 
-  expect(linkedListValues(zipperLists(a, x))).toEqual([
-    "a",
-    "x",
-    "b",
-    "y",
-    "c",
-    "z",
-  ]);
+  expect(listValues(zipperLists(a, x))).toEqual(["a", "x", "b", "y", "c", "z"]);
 });
 
 test("test_01", () => {
@@ -52,7 +45,7 @@ test("test_01", () => {
   x.next = y;
   y.next = z;
 
-  expect(linkedListValues(zipperLists(a, x))).toEqual([
+  expect(listValues(zipperLists(a, x))).toEqual([
     "a",
     "x",
     "b",
@@ -88,7 +81,7 @@ test("test_03", () => {
   one.next = two;
   two.next = three;
 
-  expect(linkedListValues(zipperLists(w, one))).toEqual(["w", 1, 2, 3]);
+  expect(listValues(zipperLists(w, one))).toEqual(["w", 1, 2, 3]);
 });
 
 test("test_04", () => {
@@ -100,5 +93,5 @@ test("test_04", () => {
 
   const w = new Node("w");
 
-  expect(linkedListValues(zipperLists(one, w))).toEqual([1, "w", 2, 3]);
+  expect(listValues(zipperLists(one, w))).toEqual([1, "w", 2, 3]);
 });

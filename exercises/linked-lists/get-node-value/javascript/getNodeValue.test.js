@@ -1,6 +1,6 @@
 import { expect, test } from "vitest";
 
-import { linkedListFind } from "./linkedListFind";
+import { getNodeValue } from "./getNodeValue";
 
 class Node {
   constructor(val) {
@@ -19,7 +19,7 @@ test("test_00", () => {
   b.next = c;
   c.next = d;
 
-  expect(linkedListFind(a, "c")).toEqual(true);
+  expect(getNodeValue(a, 2)).toEqual("c");
 });
 
 test("test_01", () => {
@@ -32,7 +32,7 @@ test("test_01", () => {
   b.next = c;
   c.next = d;
 
-  expect(linkedListFind(a, "d")).toEqual(true);
+  expect(getNodeValue(a, 3)).toEqual("d");
 });
 
 test("test_02", () => {
@@ -45,26 +45,23 @@ test("test_02", () => {
   b.next = c;
   c.next = d;
 
-  expect(linkedListFind(a, "q")).toEqual(false);
+  expect(getNodeValue(a, 7)).toEqual(null);
 });
 
 test("test_03", () => {
-  const node1 = new Node("jason");
-  const node2 = new Node("leneli");
+  const node1 = new Node("banana");
+  const node2 = new Node("mango");
 
   node1.next = node2;
 
-  expect(linkedListFind(node1, "jason")).toEqual(true);
+  expect(getNodeValue(node1, 0)).toEqual("banana");
 });
 
 test("test_04", () => {
-  const node1 = new Node(42);
+  const node1 = new Node("banana");
+  const node2 = new Node("mango");
 
-  expect(linkedListFind(node1, 42)).toEqual(true);
-});
+  node1.next = node2;
 
-test("test_05", () => {
-  const node1 = new Node(42);
-
-  expect(linkedListFind(node1, 100)).toEqual(false);
+  expect(getNodeValue(node1, 1)).toEqual("mango");
 });

@@ -5,14 +5,16 @@
 //   }
 // }
 
-export const linkedListFind = (head, target) => {
+export const getNodeValue = (head, index) => {
   let currentNode = head;
+  let currentIndex = 0;
 
   while (currentNode) {
-    if (currentNode.val === target) return true;
+    if (currentIndex === index) return currentNode.val;
 
+    currentIndex += 1;
     currentNode = currentNode.next;
   }
 
-  return false;
+  return null;
 };

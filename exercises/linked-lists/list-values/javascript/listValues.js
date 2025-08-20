@@ -5,16 +5,16 @@
 //   }
 // }
 
-export const getListNodeValue = (head, index) => {
+export const listValues = (head) => {
   let currentNode = head;
-  let currentIndex = 0;
+
+  const values = [];
 
   while (currentNode) {
-    if (currentIndex === index) return currentNode.val;
+    values.push(currentNode.val);
 
-    currentIndex += 1;
     currentNode = currentNode.next;
   }
 
-  return null;
+  return values;
 };

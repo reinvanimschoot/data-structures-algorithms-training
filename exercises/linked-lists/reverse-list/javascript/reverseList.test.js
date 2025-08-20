@@ -1,7 +1,7 @@
 import { expect, test } from "vitest";
 
 import { reverseList } from "./reverseList";
-import { linkedListValues } from "../../linked-list-values/javascript/linkedListValues";
+import { listValues } from "../../list-values/javascript/listValues";
 
 class Node {
   constructor(val) {
@@ -24,14 +24,7 @@ test("test_00", () => {
   d.next = e;
   e.next = f;
 
-  expect(linkedListValues(reverseList(a))).toEqual([
-    "f",
-    "e",
-    "d",
-    "c",
-    "b",
-    "a",
-  ]);
+  expect(listValues(reverseList(a))).toEqual(["f", "e", "d", "c", "b", "a"]);
 });
 
 test("test_01", () => {
@@ -40,11 +33,11 @@ test("test_01", () => {
 
   x.next = y;
 
-  expect(linkedListValues(reverseList(x))).toEqual(["y", "x"]);
+  expect(listValues(reverseList(x))).toEqual(["y", "x"]);
 });
 
 test("test_02", () => {
   const p = new Node("p");
 
-  expect(linkedListValues(reverseList(p))).toEqual(["p"]);
+  expect(listValues(reverseList(p))).toEqual(["p"]);
 });

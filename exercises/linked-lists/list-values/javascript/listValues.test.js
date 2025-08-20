@@ -1,6 +1,6 @@
 import { expect, test } from "vitest";
 
-import { linkedListValues } from "./linkedListValues";
+import { listValues } from "./listValues";
 
 class Node {
   constructor(val) {
@@ -19,7 +19,7 @@ test("test_00", () => {
   b.next = c;
   c.next = d;
 
-  expect(linkedListValues(a)).toEqual(["a", "b", "c", "d"]);
+  expect(listValues(a)).toEqual(["a", "b", "c", "d"]);
 });
 
 test("test_01", () => {
@@ -28,15 +28,15 @@ test("test_01", () => {
 
   x.next = y;
 
-  expect(linkedListValues(x)).toEqual(["x", "y"]);
+  expect(listValues(x)).toEqual(["x", "y"]);
 });
 
 test("test_02", () => {
   const q = new Node("q");
 
-  expect(linkedListValues(q)).toEqual(["q"]);
+  expect(listValues(q)).toEqual(["q"]);
 });
 
 test("test_03", () => {
-  expect(linkedListValues(null)).toEqual([]);
+  expect(listValues(null)).toEqual([]);
 });

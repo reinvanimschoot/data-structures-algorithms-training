@@ -1,7 +1,7 @@
 import { expect, test } from "vitest";
 
-import { linkedListValues } from "../../linked-list-values/javascript/linkedListValues";
 import { insertNode } from "./insertNode";
+import { listValues } from "../../list-values/javascript/listValues";
 
 class Node {
   constructor(val) {
@@ -20,13 +20,7 @@ test("test_00", () => {
   b.next = c;
   c.next = d;
 
-  expect(linkedListValues(insertNode(a, "x", 2))).toEqual([
-    "a",
-    "b",
-    "x",
-    "c",
-    "d",
-  ]);
+  expect(listValues(insertNode(a, "x", 2))).toEqual(["a", "b", "x", "c", "d"]);
 });
 
 test("test_01", () => {
@@ -39,13 +33,7 @@ test("test_01", () => {
   b.next = c;
   c.next = d;
 
-  expect(linkedListValues(insertNode(a, "v", 3))).toEqual([
-    "a",
-    "b",
-    "c",
-    "v",
-    "d",
-  ]);
+  expect(listValues(insertNode(a, "v", 3))).toEqual(["a", "b", "c", "v", "d"]);
 });
 
 test("test_02", () => {
@@ -58,13 +46,7 @@ test("test_02", () => {
   b.next = c;
   c.next = d;
 
-  expect(linkedListValues(insertNode(a, "m", 4))).toEqual([
-    "a",
-    "b",
-    "c",
-    "d",
-    "m",
-  ]);
+  expect(listValues(insertNode(a, "m", 4))).toEqual(["a", "b", "c", "d", "m"]);
 });
 
 test("test_03", () => {
@@ -73,5 +55,5 @@ test("test_03", () => {
 
   a.next = b;
 
-  expect(linkedListValues(insertNode(a, "z", 0))).toEqual(["z", "a", "b"]);
+  expect(listValues(insertNode(a, "z", 0))).toEqual(["z", "a", "b"]);
 });

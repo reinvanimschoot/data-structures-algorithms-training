@@ -1,7 +1,7 @@
 import { expect, test } from "vitest";
 
 import { mergeLists } from "./mergeLists";
-import { linkedListValues } from "../../linked-list-values/javascript/linkedListValues";
+import { listValues } from "../../list-values/javascript/listValues";
 
 class Node {
   constructor(val) {
@@ -31,7 +31,7 @@ test("test_00", () => {
   r.next = s;
   s.next = t;
 
-  expect(linkedListValues(mergeLists(a, q))).toEqual([
+  expect(listValues(mergeLists(a, q))).toEqual([
     5, 6, 7, 8, 9, 10, 12, 20, 25, 28,
   ]);
 });
@@ -57,7 +57,7 @@ test("test_01", () => {
   r.next = s;
   s.next = t;
 
-  expect(linkedListValues(mergeLists(a, q))).toEqual([
+  expect(listValues(mergeLists(a, q))).toEqual([
     1, 5, 7, 8, 9, 10, 10, 12, 20, 28,
   ]);
 });
@@ -69,5 +69,5 @@ test("test_02", () => {
   const q = new Node(67);
   p.next = q;
 
-  expect(linkedListValues(mergeLists(h, p))).toEqual([15, 30, 67]);
+  expect(listValues(mergeLists(h, p))).toEqual([15, 30, 67]);
 });

@@ -1,6 +1,6 @@
 import { expect, test } from "vitest";
 
-import { linkedListValues } from "../../linked-list-values/javascript/linkedListValues";
+import { listValues } from "../../list-values/javascript/listValues";
 import { removeNode } from "./removeNode";
 
 class Node {
@@ -24,13 +24,7 @@ test("test_00", () => {
   d.next = e;
   e.next = f;
 
-  expect(linkedListValues(removeNode(a, "c"))).toEqual([
-    "a",
-    "b",
-    "d",
-    "e",
-    "f",
-  ]);
+  expect(listValues(removeNode(a, "c"))).toEqual(["a", "b", "d", "e", "f"]);
 });
 
 test("test_01", () => {
@@ -41,7 +35,7 @@ test("test_01", () => {
   x.next = y;
   y.next = z;
 
-  expect(linkedListValues(removeNode(x, "z"))).toEqual(["x", "y"]);
+  expect(listValues(removeNode(x, "z"))).toEqual(["x", "y"]);
 });
 
 test("test_02", () => {
@@ -52,7 +46,7 @@ test("test_02", () => {
   q.next = r;
   r.next = s;
 
-  expect(linkedListValues(removeNode(q, "q"))).toEqual(["r", "s"]);
+  expect(listValues(removeNode(q, "q"))).toEqual(["r", "s"]);
 });
 
 test("test_03", () => {
@@ -65,7 +59,7 @@ test("test_03", () => {
   node2.next = node3;
   node3.next = node4;
 
-  expect(linkedListValues(removeNode(node1, "i"))).toEqual(["h", "j", "i"]);
+  expect(listValues(removeNode(node1, "i"))).toEqual(["h", "j", "i"]);
 });
 
 test("test_04", () => {

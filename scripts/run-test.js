@@ -7,6 +7,7 @@ var camelCase = require("lodash.camelcase");
 const { spawnSync } = require("child_process");
 
 const ROOT = path.resolve(__dirname, "..");
+const EXERCISE_ROOT = path.resolve(__dirname, "..", "exercises");
 
 const CATEGORY = process.argv[2];
 const EXERCISE = process.argv[3];
@@ -36,7 +37,7 @@ function run(cmd, args, cwd) {
 }
 
 (async () => {
-  const categoryDir = path.join(ROOT, CATEGORY);
+  const categoryDir = path.join(EXERCISE_ROOT, CATEGORY);
 
   if (!(await pathExists(categoryDir))) {
     console.error(`No folder named "${CATEGORY}" found at ${categoryDir}`);
@@ -84,6 +85,8 @@ function run(cmd, args, cwd) {
     );
     process.exit(1);
   }
+
+  console.log("TEST FILE", testFile);
 
   const vitestBin = path.join(ROOT, "node_modules", ".bin", "vitest");
 

@@ -5,16 +5,14 @@
 //   }
 // }
 
-export const linkedListValues = (head) => {
+export const findValue = (head, target) => {
   let currentNode = head;
 
-  const values = [];
-
   while (currentNode) {
-    values.push(currentNode.val);
+    if (currentNode.val === target) return true;
 
     currentNode = currentNode.next;
   }
 
-  return values;
+  return false;
 };
